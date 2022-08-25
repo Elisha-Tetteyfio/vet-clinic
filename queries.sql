@@ -18,3 +18,18 @@ SELECT
     species, SUM(escape_attempts)/COUNT(escape_attempts) AS average_escape_attempt FROM animals 
   WHERE(date_of_birth>'1990-01-01' AND date_of_birth<'2000-12-31')
   GROUP BY species;
+
+SELECT animals.name AS Melodys_animals
+  FROM animals JOIN owners ON animals.owner_id=owners.id WHERE full_name='Melody Pond';
+SELECT animals.name AS pokemon_animals 
+  FROM animals JOIN species ON animals.species_id=species.id WHERE species.name='Pokemon';
+SELECT full_name AS owner, name as animals FROM animals RIGHT JOIN owners ON animals.owner_id=owners.id;
+SELECT species.name AS specie, COUNT(species.id)
+  FROM animals JOIN species ON animals.species_id=species.id GROUP BY species.id;
+SELECT animals.name, species.name AS specie, full_name AS owner 
+  FROM animals JOIN species ON animals.species_id=species.id JOIN owners ON animals.owner_id=owners.id 
+  WHERE species.name='Digimon' AND full_name='Jennifer Orwell' GROUP BY species.name, animals.name, full_name;
+SELECT name AS animals 
+  FROM animals JOIN owners ON animals.owner_id=owners.id WHERE full_name='Dean Winchester' AND escape_attempts=0;
+SELECT full_name AS owner, COUNT(name) 
+  FROM owners JOIN  animals ON  owners.id = owner_id GROUP BY owner ORDER BY COUNT DESC LIMIT 1;
