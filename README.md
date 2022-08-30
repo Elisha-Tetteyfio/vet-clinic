@@ -2,6 +2,10 @@
 
 > This project is a work on databases, keeping information of a group of animals.
 
+A visual representation of the schema
+![Screenshot 2022-08-30 143618](https://user-images.githubusercontent.com/93135004/187466419-190abde7-1690-43b8-9a57-f882c33a6795.png)
+
+
 
 ## Getting Started
 
